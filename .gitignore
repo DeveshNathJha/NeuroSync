@@ -1,0 +1,51 @@
+# Environments
+venv/
+env/
+.env
+.venv
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Large files & Models
+models/*.gguf
+models/*.pt
+models/*.pth
+models/*.bin
+models/*.safetensors
+
+# Dynamic/Generated Data
+data/patient_logs/
+data/synthetic_eeg/
+data/validation_clips/
+# Ignoring large database backups/exports if any
+*.sqlite3
+*.db
+
+# OS & Editor generated files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store

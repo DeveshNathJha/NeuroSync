@@ -1,0 +1,34 @@
+{
+  "patients": {
+    "66d5983e": {
+      "sessions": [
+        {
+          "file": "ANON_66d5983e_SESSION_20260220_114609.enc",
+          "timestamp": 1771568169.329667,
+          "duration_sec": 0.1,
+          "event_count": 1,
+          "avg_hr": 85.0,
+          "avg_engagement": 0,
+          "dominant_symptom": "Hand Flapping"
+        }
+      ],
+      "created_at": 1771568169.3296645,
+      "last_seen": 1771568169.3296757
+    },
+    "ee6e9927": {
+      "sessions": [
+        {
+          "file": "ANON_ee6e9927_SESSION_20260220_121110.enc",
+          "timestamp": 1771569670.3462915,
+          "duration_sec": 0,
+          "event_count": 0,
+          "avg_hr": 0,
+          "avg_engagement": 0,
+          "dominant_symptom": "None"
+        }
+      ],
+      "created_at": 1771569670.346289,
+      "last_seen": 1771569670.3462968
+    }
+  }
+}

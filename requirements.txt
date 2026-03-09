@@ -1,0 +1,38 @@
+# --- NeuroSync: Dependencies ---
+# 1. CORE AI & COMPUTER VISION
+# ----------------------------
+opencv-python>=4.9.0.80     # Industrial standard for image processing
+mediapipe>=0.10.13          # Google's optimized ML solution for Face Mesh/Pose
+numpy>=1.26.3               # High-performance vector math (required for PnP)
+
+# 2. GENERATIVE AI & REASONING (The Brain)
+# ----------------------------------------
+llama-cpp-python            # Inference engine for Quantized Models (Phi-3)
+# Note: For GPU acceleration, extra installation flags may be required.
+
+# 3. AUDIO & SIGNAL PROCESSING
+# ----------------------------
+sounddevice>=0.4.6          # Non-blocking audio capture
+# pyaudio                     # Low-level audio I/O (Backup for different OS)
+scipy>=1.12.0               # Signal processing algorithms (Low-Pass Filters)
+
+# 4. DASHBOARD & VISUALIZATION (The Product)
+# ------------------------------------------
+streamlit>=1.31.0           # Framework for data apps
+plotly>=5.18.0              # Interactive, medical-grade charting (Better than Matplotlib)
+pandas>=2.2.0               # Dataframes for logs and FHIR exports
+watchdog>=4.0.0             # File system monitoring (for hot-reloading)
+
+# 5. UTILITIES
+# ------------
+pyyaml>=6.0.1               # For reading config files securely
+requests>=2.31.0            # For simulated API calls (if needed)
+fpdf2                       # PDF Generation for Medical Reports
+pylsl                       # Lab Streaming Layer for Bio-Hardware (Muse/OpenBCI)
+cryptography>=41.0.0        # Secure Encryption for HIPAA Compliance
+
+moviepy>=1.0.3
+
+
+
+

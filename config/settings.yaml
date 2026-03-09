@@ -1,0 +1,22 @@
+# NEUROSYNC ENTERPRISE CONFIGURATION
+# ----------------------------------
+
+system:
+  app_name: "NeuroSync Enterprise"
+  version: "1.0.0-beta"
+  debug_mode: true
+
+# MODEL PATHS (Update this to where your model actually is!)
+models:
+  llm_path: "models/Phi-3-mini-4k-instruct.Q4_K_M.gguf"  # <--- CHECK THIS PATH
+  vision_confidence: 0.7
+
+# CLINICAL THRESHOLDS (DSM-5 Criteria A.2)
+thresholds:
+  gaze_aversion_limit_sec: 5.0
+  stress_spike_limit: 85.0   # HRV/Stress threshold
+  
+# REPORTING
+reporting:
+  standard: "FHIR_DSTU2"
+  clinic_name: "Tata Elxsi Digital Health Lab"
