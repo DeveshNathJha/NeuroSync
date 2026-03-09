@@ -231,12 +231,6 @@ Future evolution targets a **SaaS Model**:
 
 ---
 
-## 16. Author
-
-**Lead Architect & Engineer**
-*   **Specialty**: AI Systems & Full-Stack Architecture
-*   **Focus**: Building scalable, human-centric AI solutions.
-*   **Portfolio**: [GitHub Profile Link]
 
 ---
-*© 2026 NeuroSync Enterprise. Open Source for Research Use.*
+*©NeuroSync Enterprise. Open Source for Research Use.*
