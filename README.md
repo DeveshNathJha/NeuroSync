@@ -4,7 +4,7 @@
 
 ---
 
-## 2. Problem Statement
+## 2. Problem Statement 
 
 **Autism Spectrum Disorder (ASD)** affects 1 in 36 children, yet the diagnosis and monitoring process remains archaic:
 *   **Subjective**: Relies heavily on human observation, which varies between clinicians.
