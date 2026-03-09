@@ -66,7 +66,7 @@ graph TD
     subgraph "Orchestration Layer (Logic)"
         Vision & Audio & Bio --> Fusion[Fusion Engine]
         Fusion -->|Events| Log[Data Logger]
-        Log -->|JSON| Reasoner[Clinical Reasoner (LLM)]
+        Log -->|JSON| Reasoner["Clinical Reasoner (LLM)"]
     end
 
     subgraph "Presentation Layer (UI)"
