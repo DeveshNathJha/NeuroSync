@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Secrets – NEVER commit keys or env files
+*.key
+*.pem
+.env
+.env.*
+!.env.example
+
+# Personal / session data – lives in ~/.neurosync, never in the repo
+data/
+*.enc
+*.jsonl
+logs/
+*.log
+
+# Videos and recordings
+*.mp4
+*.mov
+*.avi
+*.wav
+
+# Model files (download with: python scripts/download_models.py)
+models/*.task
+models/*.gguf
+models/*.bin
+
+# Evaluation datasets (download manually, licences don't allow re-publishing)
+datasets/
+
+# Private notes (interview prep, GitHub steps)
+_private/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.zip

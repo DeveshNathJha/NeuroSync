@@ -1,0 +1,82 @@
+# ============================================================
+# NeuroSync – configuration (single source of truth)
+# ============================================================
+# NeuroSync is a NON-DIAGNOSTIC session-observation assistant. Every detection
+# is a *suggestion* that a trained professional confirms or rejects.
+#
+# Session data and the encryption key are stored OUTSIDE the repository, in
+# the data directory below (override with the NEUROSYNC_DATA_DIR env variable).
+
+app:
+  name: "NeuroSync"
+  version: "2.0.0"
+  disclaimer: >-
+    NeuroSync is a research prototype that helps a professional log observable
+    behaviours during a session. It does not diagnose, screen for or assess any
+    condition. Every suggested event must be reviewed by a person.
+
+storage:
+  data_dir: "~/.neurosync"          # sessions, key, audit log, index
+  delete_video_after_analysis: true  # uploaded videos are removed after processing
+  retention_days: 365                # sessions older than this are listed for deletion
+  max_upload_mb: 2048                # largest accepted session video
+
+session:
+  max_duration_min: 90               # a session always has a fixed end; no 24/7 monitoring
+  require_consent: true
+  baseline_s: 60                     # resting heart-rate measurement at the start of a live session
+
+video:
+  camera_index: 0
+  width: 640
+  height: 480
+  target_fps: 30
+
+behaviour:
+  # Repetitive arm/hand movement ("hand flapping"): wrist oscillation in a band
+  window_s: 2.0                      # analysis window
+  flapping_band_hz: [2.0, 6.0]
+  flapping_min_amplitude: 0.15       # in shoulder widths
+  flapping_min_power_ratio: 0.45     # share of spectral power inside the band
+  # Repetitive head movement (rocking / banging-like): vertical head oscillation
+  head_band_hz: [0.5, 3.0]
+  head_min_amplitude: 0.12           # in face widths
+  head_min_power_ratio: 0.45
+  # Head turned away from the camera for a sustained time
+  head_turn_ratio: 0.22              # |nose offset| / face width beyond which the head counts as turned
+  head_turn_min_s: 3.0
+  # Merge detections of the same kind closer than this into one event
+  merge_gap_s: 1.5
+  min_event_s: 1.0
+
+audio:
+  sample_rate: 16000
+  block_s: 0.1
+  loud_dbfs: -20.0                   # loudness (dBFS) above which a sound counts as loud
+  loud_min_s: 0.5
+  merge_gap_s: 1.0
+
+rppg:
+  window_s: 10.0                     # heart-rate estimate over the last N seconds
+  update_every_s: 1.0
+  band_hz: [0.75, 3.0]               # 45–180 BPM
+  method: "pos"                      # pos | green
+  min_snr_db: 3.0                    # below this the estimate is reported as unreliable
+  elevated_above_baseline_bpm: 20    # "elevated heart rate" = baseline + this
+  elevated_min_s: 5.0
+
+fusion:
+  co_occurrence_window_s: 5.0        # behaviour and physiological event closer than this are linked
+
+report:
+  llm_path: "models/Phi-3-mini-4k-instruct.Q4_K_M.gguf"   # optional; template report without it
+  llm_threads: 4
+  llm_max_tokens: 500
+
+api:
+  # Local server. 127.0.0.1 = reachable only from this computer.
+  # Binding to 0.0.0.0 would expose session data and the live camera stream to the
+  # whole network – only do that behind authentication and TLS.
+  host: "127.0.0.1"
+  port: 8000
+  cors_origins: []                   # e.g. ["http://localhost:5173"] for a separate front-end dev server

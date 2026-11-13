@@ -1,0 +1,5 @@
+# Optional: local LLM (Phi-3 mini, GGUF) to word the observation notes.
+# Without it NeuroSync writes deterministic template notes.
+# Model file (~2.3 GB) goes to models/Phi-3-mini-4k-instruct.Q4_K_M.gguf (see README).
+-r requirements.txt
+llama-cpp-python>=0.2.90

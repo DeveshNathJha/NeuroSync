@@ -1,0 +1,22 @@
+[project]
+name = "neurosync"
+version = "2.0.0"
+description = "Privacy-first, non-diagnostic session-observation assistant (webcam pose, audio, contactless heart rate) with human review."
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E402", "B008", "B905", "UP007", "UP045"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["src", "scripts", "tests"]

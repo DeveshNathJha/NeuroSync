@@ -1,0 +1,18 @@
+# NeuroSync v2 – runtime dependencies (Python 3.10–3.12)
+# Optional local LLM for report wording: pip install -r requirements-llm.txt
+# Development / tests:                   pip install -r requirements-dev.txt
+
+numpy>=1.26,<2.3
+scipy>=1.11
+opencv-python>=4.9
+mediapipe>=0.10.14        # Tasks API (PoseLandmarker / FaceLandmarker); mp.solutions is NOT used
+sounddevice>=0.4.6        # live microphone (optional at runtime; the app runs without a mic)
+imageio-ffmpeg>=0.5       # bundled ffmpeg for reading audio from uploaded videos
+
+fastapi>=0.110            # local REST + WebSocket API (also serves the web UI)
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9   # video uploads
+
+cryptography>=42          # Fernet encryption of stored sessions
+fpdf2>=2.7                # PDF observation notes
+pyyaml>=6.0
